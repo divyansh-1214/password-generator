@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 320px;
+            padding: 15px;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 18px;
+            color: #444;
+        }
+        .result-container {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        #result {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            background-color: #fff;
+            outline: none;
+        }
+        .btn-copy {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-copy:hover {
+            background-color: #0056b3;
+        }
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .setting input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-large {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn-large:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>Password Generator</h2>
+    
+    <div class="result-container">
+        <input type="text" id="result" readonly placeholder="Click Generate">
+        <button class="btn-copy" id="copy">Copy</button>
+    </div>
+    
+    <div class="settings">
+        <div class="setting">
+            <label for="length">Password Length</label>
+            <input type="number" id="length" min="4" max="50" value="12">
+        </div>
+        <div class="setting">
+            <label for="uppercase">Include Uppercase</label>
+            <input type="checkbox" id="uppercase" checked>
+        </div>
+        <div class="setting">
+            <label for="lowercase">Include Lowercase</label>
+            <input type="checkbox" id="lowercase" checked>
+        </div>
+        <div class="setting">
+            <label for="numbers">Include Numbers</label>
+            <input type="checkbox" id="numbers" checked>
+        </div>
+        <div class="setting">
+            <label for="symbols">Include Symbols</label>
+            <input type="checkbox" id="symbols" checked>
+        </div>
+    </div>
+    
+    <button class="btn-large" id="generate">Generate Password</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
